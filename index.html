@@ -1,95 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Teste</title>
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background: #4a90e2;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background: #357ab8;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffdd57;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        h1, h2 {
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        footer {
-            background: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pindorama Vozes</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Meu Site de Teste</h1>
-        <p>Um site básico estilizado com HTML + CSS</p>
-    </header>
 
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="topo">
+    <div class="logo">Pindorama</div>
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Sobre</a>
-        <a href="#">Serviços</a>
-        <a href="#">Contato</a>
+      <a href="#">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#principios">Princípios</a>
     </nav>
+    <a href="#contato" class="botao-topo">Fale conosco</a>
+  </header>
 
-    <main>
-        <h2>Bem-vindo!</h2>
-	<p>Teste</p>
-    </main>
+  <!-- ===== SEÇÃO PRINCIPAL ===== -->
+  <section class="hero">
+    <div class="texto">
+      <h1>Pindorama <span>Vozes</span></h1>
+      <p>
+        Somos uma agência e produtora dedicada à valorização de talentos pertencentes a grupos históricamente
+        marginalizados.
+      </p>
+      <div class="botoes">
+        <a href="https://www.instagram.com/pindorama.vozes/" class="botao-vermelho">Conheça nosso trabalho</a>
+      </div>
+    </div>
+    <div class="imagem">
+      <img src="img/logo pindorama.png" alt="Pindorama">
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 - Meu Site de Teste</p>
-    </footer>
+  <!-- ===== SOBRE NÓS ===== -->
+  <section id="sobre" class="sobre">
+    <div class="imagem">
+      <img src="img/logo pindorama.png" alt="Pindorama">
+    </div>
+    <div class="texto">
+      <h2><span>Sobre</span> Nós</h2>
+      <p>
+        O nome da agência é Pindorama, que significa "Terra das Palmeiras" na língua Tupi. As cores são super importantes: usamos tons terrosos e avermelhados, inspirados no urucum e
+        jenipapo (pintura corporal indígena). A logo tem essa textura, uma referência aos grafismos,
+        reforçando nosso DNA cultural.
+      </p>
+      <p>
+        Escolhemos esse nome não só por ser legal, mas como um resgate que representa
+        o quanto a gente valoriza e se conecta com a nossa história, a força e a riqueza das
+        nossas raízes brasileiras. Nossa identidade visual acompanha essa ideia.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== MISSÃO / VISÃO / VALORES ===== -->
+  <section id="principios" class="valores">
+    <h2>Nossos <span>Princípios</span></h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Missão</h3>
+        <p>A Missão da Pindorama é empoderar e dar uma plataforma para talentos que o mercado muitas
+          vezes ignora. Estamos falando de gente preta, PCD, LGBTQIAPN+, e outros grupos minorizados.
+          Queremos que o cenário criativo seja de fato plural, e a gente está aqui para fazer isso
+          acontecer.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Visão</h3>
+        <p> Ser a empresa que consegue trazer a oportunidade completa ao artista, dando a ele tudo
+          o que ele precisa para ser agenciado e crescer. Queremos ser, de fato, essa rede de pessoas
+          que consegue dar voz para quem ainda não foi ouvido pelo mercado.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Valores</h3>
+        <p>Ser para as marcas, um repositório confiável de talentos diversos. Para os artistas,
+          somos uma gestão estratégica e ética, não só fechando contratos, mas garantindo que o
+          artista cresça de um jeito justo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre">
+    <div class="texto">
+      <h2 class="hst"><span>Nossa</span> História</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit posuere,
+        sagittis massa maximus, porta ipsum. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Etiam in volutpat eros, at sagittis lacus. Aenean finibus
+        nisl lacus, vitae scelerisque dui suscipit a. Proin aliquet at eros ut venenatis. Sed
+        suscipit rutrum orci, ullamcorper mollis mi molestie tempor. Aliquam faucibus faucibus
+        tincidunt. Nunc hendrerit libero odio, vel cursus libero mattis lobortis. Mauris eu nisl
+        non libero maximus convallis. Integer non magna lobortis, sollicitudin ligula vel, ornare lacus.
+      </p>
+      <p>
+        Nulla diam risus, scelerisque vel blandit sed, commodo a dolor. In quis tincidunt lorem.
+        Sed ac volutpat arcu. Vivamus a lacinia elit, id tempus ante. Maecenas ut posuere nibh. Duis
+        eu nunc vel felis tempus ullamcorper et in leo. Fusce mattis ultrices leo, a pharetra sapien
+        semper vel. Suspendisse condimentum sollicitudin dolor, vel vehicula ligula consequat sed.
+        Quisque dignissim, dolor id elementum viverra, lorem justo laoreet neque, a laoreet diam quam
+        quis felis. Aenean vulputate sapien ac suscipit lacinia. Nunc lacinia nisl malesuada magna
+        rhoncus, vel consequat elit ultrices. Nulla nec commodo mauris. Fusce risus nibh, egestas et
+        finibus eget, sagittis ut est.
+      </p>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="texto">
+      <h1>Entrevista</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit posuere,
+        sagittis massa maximus, porta ipsum. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Etiam in volutpat eros, at sagittis lacus.
+      </p>
+    </div>
+    <div class="imagem">
+      <img src="img/logo pindorama.png" alt="Pindorama">
+    </div>
+  </section>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <img id="contato" class="footerPindorama" src="img/Frame 2.png" alt="Logo Pindorama">
+    <p>&copy; 2025 Pindorama Vozes — Todos os direitos reservados.</p>
+    <p> 🖂 oficialpindorama7@gmail.com</p>
+    <p> Instagram: @pindorama.vozes | TikTok: @pindorama</p>
+  </footer>
+
 </body>
 </html>
