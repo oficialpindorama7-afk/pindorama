@@ -1,3 +1,5 @@
+/* CSS melhorado - estrutura mais moderna, espaçamento aprimorado e visual mais elegante */
+
 /* ===== RESET ===== */
 * {
   margin: 0;
@@ -6,19 +8,22 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== CORES ===== */
 :root {
   --vermelho: #e31b09;
   --vinho: #8e3c35;
   --fundo: #332d2d;
+  --fundo-claro: #3e3535;
   --texto-claro: #f8f8f8;
+  --cinza: #c8c8c8;
+  --radius: 14px;
+  --trans: 0.3s ease;
 }
 
-/* ===== BASE ===== */
 body {
   background-color: var(--fundo);
   color: var(--texto-claro);
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 /* ===== CABEÇALHO ===== */
@@ -26,49 +31,62 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
-  background-color: rgba(142, 60, 53, 0.95);
+  padding: 18px 8%;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo {
+  font-size: 1.8rem;
   font-weight: 700;
-  font-size: 1.6rem;
-  color: var(--texto-claro);
+  letter-spacing: 1px;
 }
 
 nav a {
-  margin: 0 18px;
-  text-decoration: none;
+  margin: 0 15px;
   color: var(--texto-claro);
+  text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  position: relative;
+  transition: var(--trans);
 }
 
-nav a:hover,
-nav a.ativo {
+nav a:hover {
   color: var(--vermelho);
-  border-bottom: 2px solid var(--vermelho);
-  padding-bottom: 3px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--vermelho);
+  left: 0;
+  bottom: -4px;
+  transition: var(--trans);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 .botao-topo {
-  background-color: var(--vermelho);
+  background: var(--vermelho);
+  padding: 10px 22px;
+  border-radius: var(--radius);
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s;
+  transition: var(--trans);
 }
 
 .botao-topo:hover {
-  background-color: #c41607;
+  background: #c41607;
 }
 
 /* ===== HERO ===== */
@@ -76,18 +94,14 @@ nav a.ativo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 120px 8% 60px;
-  min-height: 90vh;
-}
-
-.hero .texto {
-  width: 50%;
-  animation: fadeInLeft 1s ease forwards;
+  padding: 140px 8% 80px;
+  gap: 50px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: white;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .hero h1 span {
@@ -95,56 +109,57 @@ nav a.ativo {
 }
 
 .hero p {
-  margin: 20px 0 30px;
-  color: #ddd;
-  line-height: 1.6;
-  font-size: 1.1rem;
+  margin-top: 20px;
+  max-width: 520px;
+  color: var(--cinza);
+  font-size: 1.15rem;
 }
 
-.botoes {
-  display: flex;
-  gap: 15px;
-}
-
-.botao-vermelho, .botao-contorno {
-  padding: 12px 25px;
-  border-radius: 8px;
+.botoes a {
+  padding: 14px 28px;
+  border-radius: var(--radius);
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  transition: var(--trans);
+  display: inline-block;
+  margin-right: 12px;
 }
 
 .botao-vermelho {
-  background-color: var(--vermelho);
-  color: white;
+  background: var(--vermelho);
+  color: #fff;
 }
 
 .botao-vermelho:hover {
-  background-color: #c41607;
+  background: #c41607;
+  transform: translateY(-3px);
 }
 
 .botao-contorno {
   border: 2px solid var(--vermelho);
   color: var(--vermelho);
-  background: transparent;
 }
 
 .botao-contorno:hover {
-  background-color: var(--vermelho);
-  color: white;
+  background: var(--vermelho);
+  color: #fff;
+  transform: translateY(-3px);
 }
 
-/* ===== IMAGEM ===== */
 .imagem img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.3);
-  transition: transform 0.4s;
+  max-width: 420px;
+  border-radius: var(--radius);
+  box-shadow: 0 0 30px rgba(0,0,0,0.35);
+  transition: var(--trans);
 }
 
 .imagem img:hover {
   transform: scale(1.05);
+}
+
+/* ===== SEÇÕES PADRÃO ===== */
+section {
+  padding: 80px 8%;
 }
 
 /* ===== SOBRE ===== */
@@ -152,14 +167,17 @@ nav a.ativo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 8%;
-  gap: 60px;
-  background-color: #3e3535;
+  gap: 50px;
+  background: var(--fundo-claro);
+  border-radius: var(--radius);
+  margin: 40px 8%;
+  padding: 70px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
 }
 
 .sobre h2 {
-  font-size: 2.5rem;
-  color: white;
+  font-size: 2.8rem;
+  margin-bottom: 12px;
 }
 
 .sobre h2 span {
@@ -167,95 +185,86 @@ nav a.ativo {
 }
 
 .sobre p {
-  margin-top: 15px;
-  line-height: 1.7;
-  color: #e3e3e3;
+  color: var(--cinza);
+  font-size: 1.1rem;
 }
 
-.sobre .hst{
-  text-align: center;
-}
-
-/* ===== VALORES ===== */
-.valores {
-  text-align: center;
-  padding: 80px 8%;
-}
-
+/* ===== CARDS – PRINCÍPIOS ===== */
 .valores h2 {
-  font-size: 2.5rem;
+  text-align: center;
+  font-size: 3rem;
   margin-bottom: 40px;
-}
-
-.valores h2 span {
-  color: var(--vermelho);
 }
 
 .cards {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  gap: 35px;
 }
 
 .card {
-  background-color: #3e3535;
-  padding: 30px;
-  border-radius: 12px;
-  width: 300px;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 320px;
+  padding: 35px;
+  background: var(--fundo-claro);
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  transition: var(--trans);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(227,27,9,0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(227,27,9,0.4);
 }
 
 .card h3 {
   color: var(--vermelho);
-  margin-bottom: 15px;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
 }
 
 .card p {
-  color: #e3e3e3;
+  color: var(--cinza);
   font-size: 1rem;
-  line-height: 1.5;
+}
+
+/* ===== ENTREVISTA ===== */
+iframe {
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 520px;
+  height: 300px;
 }
 
 /* ===== RODAPÉ ===== */
 footer {
   text-align: center;
-  background-color: var(--vinho);
-  padding: 25px;
+  padding: 40px 20px;
+  background: var(--vinho);
+  margin-top: 60px;
   color: var(--texto-claro);
-  font-size: 0.95rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footerPindorama {
-  width: 65%;
-  margin-bottom: 10px;
+  width: 60%;
+  margin-bottom: 12px;
 }
 
-/* ===== ANIMAÇÕES ===== */
-@keyframes fadeInLeft {
-  from {opacity: 0; transform: translateX(-40px);}
-  to {opacity: 1; transform: translateX(0);}
-}
-
-/* ===== RESPONSIVO ===== */
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 950px) {
-  .hero, .sobre {
+  .hero,
+  .sobre {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero .texto, .sobre .texto, .imagem {
-    width: 100%;
+  iframe {
+    height: 220px;
   }
 
-  .cards {
-    flex-direction: column;
-    align-items: center;
+  nav {
+    display: none;
   }
 }
